@@ -9,60 +9,58 @@
 import UIKit
 
 final class ViewController: UIViewController {
-    @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var imageTopConstraint: NSLayoutConstraint!
-    private var originalHeight: CGFloat!
-    
-    private var blurEffectView: UIVisualEffectView!
-    private var animator: UIViewPropertyAnimator!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentInsetAdjustmentBehavior = .never
-        scrollView.delegate = self
-        originalHeight = 300
+        config()
+    }
+    
+    private func config() {
+        // CollectionView's Settings
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.contentInsetAdjustmentBehavior = .never
         
-        setupVisualEffectBlur()
-    }
-    
-    private func setupVisualEffectBlur() {
-        animator = UIViewPropertyAnimator(duration: 3.0, curve: .linear, animations: { [weak self] in
-            guard let self = self else { return }
-            
-            let blurEffect = UIBlurEffect(style: .regular)
-            self.blurEffectView = UIVisualEffectView(effect: blurEffect)
-            self.imageView.addSubview(self.blurEffectView)
-            self.setupConstraints()
-        })
-    }
-    
-    private func setupConstraints() {
-        blurEffectView.translatesAutoresizingMaskIntoConstraints = false
-        blurEffectView.leadingAnchor.constraint(equalTo: imageView.leadingAnchor).isActive = true
-        blurEffectView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
-        blurEffectView.topAnchor.constraint(equalTo: imageView.topAnchor).isActive = true
-        blurEffectView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
+        // NavigationController's Settings
+        title = "Navigation Bar"
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor (red: 1.0/255.0, green: 1.0/255.0, blue: 1.0/255.0, alpha: 0)]
     }
 }
 
-extension ViewController: UIScrollViewDelegate {
+extension ViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as UICollectionViewCell
+        return cell
+    }
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 300)
+    }
+}
+
+extension ViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset.y
-        let defaultTop = CGFloat(0)
-        var currentTop = defaultTop
-        
-        if scrollView == self.scrollView {
-            if offset < 0 {
-                currentTop = offset
-                imageHeightConstraint.constant = originalHeight - offset
-                animator.fractionComplete = abs(offset) / 100
-            } else {
-                imageHeightConstraint.constant = originalHeight
-                animator.fractionComplete = 0
-            }
-            imageTopConstraint.constant = currentTop
+        var offset = scrollView.contentOffset.y / 150
+        if offset > 1 {
+            offset = 1
         }
+        
+        let whiteColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: offset)
+        let blackColor = UIColor (red: 1.0/255.0, green: 1.0/255.0, blue: 1.0/255.0, alpha: offset)
+        navigationController?.navigationBar.tintColor = blackColor
+        navigationController?.navigationBar.backgroundColor = whiteColor
+        UIApplication.shared.statusBarView?.backgroundColor = whiteColor
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: blackColor]
     }
 }
