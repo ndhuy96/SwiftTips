@@ -12,6 +12,9 @@
 		8E89DD31232B893700BD3697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E89DD2F232B893700BD3697 /* Main.storyboard */; };
 		8E89DD33232B893900BD3697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E89DD32232B893900BD3697 /* Assets.xcassets */; };
 		8E89DD36232B893900BD3697 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E89DD34232B893900BD3697 /* LaunchScreen.storyboard */; };
+		8EADE38F2506523600183861 /* UITabBarController+Hidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EADE38E2506523600183861 /* UITabBarController+Hidable.swift */; };
+		8EADE391250769AD00183861 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EADE390250769AD00183861 /* TabBar.storyboard */; };
+		8EADE39325076E2100183861 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EADE39225076E2100183861 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		8E89DD32232B893900BD3697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E89DD35232B893900BD3697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E89DD37232B893900BD3697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EADE38E2506523600183861 /* UITabBarController+Hidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Hidable.swift"; sourceTree = "<group>"; };
+		8EADE390250769AD00183861 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		8EADE39225076E2100183861 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E1A8C532514B52D00B7E97F /* HiddenTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8EADE390250769AD00183861 /* TabBar.storyboard */,
+				8EADE38E2506523600183861 /* UITabBarController+Hidable.swift */,
+				8EADE39225076E2100183861 /* HomeViewController.swift */,
+			);
+			path = HiddenTabBar;
+			sourceTree = "<group>";
+		};
 		8E89DD1F232B893700BD3697 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +70,7 @@
 		8E89DD2A232B893700BD3697 /* SwiftTips */ = {
 			isa = PBXGroup;
 			children = (
+				8E1A8C532514B52D00B7E97F /* HiddenTabBar */,
 				8E89DD2B232B893700BD3697 /* AppDelegate.swift */,
 				8E89DD2D232B893700BD3697 /* ViewController.swift */,
 				8E89DD2F232B893700BD3697 /* Main.storyboard */,
@@ -122,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EADE391250769AD00183861 /* TabBar.storyboard in Resources */,
 				8E89DD36232B893900BD3697 /* LaunchScreen.storyboard in Resources */,
 				8E89DD33232B893900BD3697 /* Assets.xcassets in Resources */,
 				8E89DD31232B893700BD3697 /* Main.storyboard in Resources */,
@@ -136,6 +154,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E89DD2E232B893700BD3697 /* ViewController.swift in Sources */,
+				8EADE39325076E2100183861 /* HomeViewController.swift in Sources */,
+				8EADE38F2506523600183861 /* UITabBarController+Hidable.swift in Sources */,
 				8E89DD2C232B893700BD3697 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
