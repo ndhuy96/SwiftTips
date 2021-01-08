@@ -12,6 +12,10 @@
 		8E89DD31232B893700BD3697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E89DD2F232B893700BD3697 /* Main.storyboard */; };
 		8E89DD33232B893900BD3697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E89DD32232B893900BD3697 /* Assets.xcassets */; };
 		8E89DD36232B893900BD3697 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E89DD34232B893900BD3697 /* LaunchScreen.storyboard */; };
+		8EBE3FC7257F79F600F5E055 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE3FC6257F79F600F5E055 /* CarouselViewController.swift */; };
+		8EBE3FCB257F7CDD00F5E055 /* CarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE3FCA257F7CDD00F5E055 /* CarouselViewModel.swift */; };
+		8EBE3FCE257F87A500F5E055 /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE3FCD257F87A500F5E055 /* DeviceHelper.swift */; };
+		8EBE40672582211E00F5E055 /* Carousel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EBE40662582211E00F5E055 /* Carousel.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		8E89DD32232B893900BD3697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E89DD35232B893900BD3697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E89DD37232B893900BD3697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EBE3FC6257F79F600F5E055 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		8EBE3FCA257F7CDD00F5E055 /* CarouselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewModel.swift; sourceTree = "<group>"; };
+		8EBE3FCD257F87A500F5E055 /* DeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
+		8EBE40662582211E00F5E055 /* Carousel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Carousel.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,8 @@
 		8E89DD2A232B893700BD3697 /* SwiftTips */ = {
 			isa = PBXGroup;
 			children = (
+				8E95414525A7FAEF00CC0979 /* Helper */,
+				8EBE407C25836E8F00F5E055 /* Carousel */,
 				8E89DD2B232B893700BD3697 /* AppDelegate.swift */,
 				8E89DD2D232B893700BD3697 /* ViewController.swift */,
 				8E89DD2F232B893700BD3697 /* Main.storyboard */,
@@ -62,6 +72,24 @@
 				8E89DD37232B893900BD3697 /* Info.plist */,
 			);
 			path = SwiftTips;
+			sourceTree = "<group>";
+		};
+		8E95414525A7FAEF00CC0979 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8EBE3FCD257F87A500F5E055 /* DeviceHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		8EBE407C25836E8F00F5E055 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				8EBE3FC6257F79F600F5E055 /* CarouselViewController.swift */,
+				8EBE3FCA257F7CDD00F5E055 /* CarouselViewModel.swift */,
+				8EBE40662582211E00F5E055 /* Carousel.storyboard */,
+			);
+			path = Carousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBE40672582211E00F5E055 /* Carousel.storyboard in Resources */,
 				8E89DD36232B893900BD3697 /* LaunchScreen.storyboard in Resources */,
 				8E89DD33232B893900BD3697 /* Assets.xcassets in Resources */,
 				8E89DD31232B893700BD3697 /* Main.storyboard in Resources */,
@@ -135,7 +164,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBE3FCB257F7CDD00F5E055 /* CarouselViewModel.swift in Sources */,
 				8E89DD2E232B893700BD3697 /* ViewController.swift in Sources */,
+				8EBE3FCE257F87A500F5E055 /* DeviceHelper.swift in Sources */,
+				8EBE3FC7257F79F600F5E055 /* CarouselViewController.swift in Sources */,
 				8E89DD2C232B893700BD3697 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
