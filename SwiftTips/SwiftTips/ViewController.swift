@@ -59,7 +59,7 @@ extension ViewController {
         let blackColor = UIColor (red: 1.0/255.0, green: 1.0/255.0, blue: 1.0/255.0, alpha: offset)
         navigationController?.navigationBar.tintColor = blackColor
         navigationController?.navigationBar.backgroundColor = whiteColor
-        UIApplication.shared.statusBarView?.backgroundColor = whiteColor
+        UIApplication.shared.statusBarUIView?.backgroundColor = whiteColor
         navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.foregroundColor: blackColor]
     }

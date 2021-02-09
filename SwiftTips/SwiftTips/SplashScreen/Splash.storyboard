@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JBc-9b-nLN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="ZdX-f5-zX0">
+            <objects>
+                <viewController id="JBc-9b-nLN" customClass="SplashViewController" customModule="SwiftTips" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BLs-LZ-f1c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppZ-nf-gbX" customClass="AnimationView" customModule="SwiftTips" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7bo-Bn-B13"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7bo-Bn-B13" firstAttribute="trailing" secondItem="ppZ-nf-gbX" secondAttribute="trailing" id="7iL-L1-5rB"/>
+                            <constraint firstItem="ppZ-nf-gbX" firstAttribute="top" secondItem="BLs-LZ-f1c" secondAttribute="top" id="FLe-a7-atc"/>
+                            <constraint firstItem="ppZ-nf-gbX" firstAttribute="leading" secondItem="7bo-Bn-B13" secondAttribute="leading" id="N3D-BT-GFv"/>
+                            <constraint firstAttribute="bottom" secondItem="ppZ-nf-gbX" secondAttribute="bottom" id="yOO-GG-vdd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="splashView" destination="ppZ-nf-gbX" id="9HA-IW-CBe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mu9-Of-KuI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="262" y="179"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
